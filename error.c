@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lortega- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 18:51:10 by lortega-          #+#    #+#             */
+/*   Updated: 2025/04/15 18:51:14 by lortega-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "cub3.h"
 
-int ft_good_map(char *maps_name)
+int	ft_good_map(char *maps_name)
 {
 	int	x;
 
@@ -16,7 +27,7 @@ int ft_good_map(char *maps_name)
 	return (1);
 }
 
-int ft_argument_error(int argc, char **argv)
+int	ft_argument_error(int argc, char **argv)
 {
 	if (argc != 2)
 	{
@@ -36,5 +47,5 @@ int ft_argument_error(int argc, char **argv)
 	}
 	if (ft_good_map(argv[1]) == -1)
 		return (-1);
-	return(1);
+	return (1);
 }
