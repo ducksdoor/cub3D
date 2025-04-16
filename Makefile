@@ -17,8 +17,17 @@ CFLAG = -Wall -Wextra -Werror
 
 SOURCES = main.c \
 			error.c \
+			ft_valid_map.c \
+			ft_print_error.c \
+			get_next_line.c \
+			ft_clean_line.c \
+			ft_calloc.c \
+			ft_bzero.c \
+			ft_strchr.c \
+			ft_strjoin.c \
 			ft_strlen.c \
-			ft_strncmp.c
+			ft_strncmp.c \
+			ft_substr.c \
 
 OBJECT = $(SOURCES:.c=.o)
 

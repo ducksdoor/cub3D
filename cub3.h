@@ -15,10 +15,26 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <fcntl.h>
+# include <limits.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 int		ft_argument_error(int argc, char **argv);
 int		ft_good_map(char *maps_name);
+int		ft_valid_map(char *argv);
+void	ft_print_error(char *text);
+
+char	*get_next_line(int fd);
+char	*ft_clean_line(char **rest, char **buffer);
+
+void	*ft_calloc(size_t count, size_t size);
+void	ft_bzero(void *s, unsigned int n);
 size_t	ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strchr(const char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

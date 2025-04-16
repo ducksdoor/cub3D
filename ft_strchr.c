@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 18:51:26 by lortega-          #+#    #+#             */
-/*   Updated: 2025/04/15 18:51:32 by lortega-         ###   ########.fr       */
+/*   Created: 2025/04/16 11:36:52 by lortega-          #+#    #+#             */
+/*   Updated: 2025/04/16 11:36:54 by lortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3.h"
 
-int	main(int argc, char **argv)
+int	ft_strchr(const char *s, int c)
 {
-	if (ft_argument_error(argc, argv) == -1)
-		exit (-1);
-	if (ft_valid_map(argv[1]) == -1)
-		exit (-1);
-	printf(" the maps is --> %s\n", argv[1]);
+	int		x;
+	int		y;
+
+	if (!s)
+		return (0);
+	x = 0;
+	y = ft_strlen(s);
+	while (x <= y)
+	{
+		if (s[x] == (char)c)
+		{
+			return (1);
+		}
+		++x;
+	}
+	return (0);
 }
