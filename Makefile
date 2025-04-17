@@ -13,13 +13,16 @@ NAME = cub3
 CC = gcc
 RM = rm -rf
 
-CFLAG = -Wall -Wextra -Werror 
+CFLAG = -Wall -Wextra -Werror -g3 -fsanitize=address
 
 SOURCES = main.c \
 			error.c \
+			ft_valid_file.c \
+			ft_created_map.c \
 			ft_valid_map.c \
 			ft_print_error.c \
 			get_next_line.c \
+			ft_free.c \
 			ft_clean_line.c \
 			ft_calloc.c \
 			ft_bzero.c \
@@ -28,6 +31,8 @@ SOURCES = main.c \
 			ft_strlen.c \
 			ft_strncmp.c \
 			ft_substr.c \
+			ft_strdup.c \
+			ft_split.c \
 
 OBJECT = $(SOURCES:.c=.o)
 
