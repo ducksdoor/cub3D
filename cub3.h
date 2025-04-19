@@ -21,10 +21,24 @@
 #  define BUFFER_SIZE 42
 # endif
 
+typedef struct s_map
+{
+	char	*no;
+	char	*so;
+	char	*we;
+    char	*ea;
+    char	*f;
+    char	*c;
+}				t_map;
+
 int		ft_argument_error(int argc, char **argv);
+t_map	*obtain_data(char *argv);
+t_map	*ft_init_t_map(void);
 int		ft_good_map(char *maps_name);
 int		ft_valid_file(char *argv);
 char	**ft_created_map(char *argv, char *aux);
+int		ft_closed_map(char **map, int x, int y);
+int		ft_compare_char(char object, char *try);
 void	ft_print_error(char *text);
 int		ft_valid_map(char **map, int x, int y, int flag);
 
@@ -40,7 +54,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *src);
 
-char	**ft_split(char const *s, char c); //
-void	ft_free(char **lst); //
+char	**ft_split(char const *s, char c);
+void	ft_free(char **lst);
 
 #endif

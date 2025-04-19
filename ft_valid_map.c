@@ -14,9 +14,14 @@
 
 static int	ft_comprobated_flag(int flag)
 {
-	if (flag == 37)
+	if (flag == -37)
 	{
 		ft_print_error(" incorret char ...");
+		return (-1);
+	}
+	else if (flag == -42)
+	{
+		ft_print_error(" the map stay open");
 		return (-1);
 	}
 	else if (flag != 1)
@@ -27,24 +32,27 @@ static int	ft_comprobated_flag(int flag)
 	return (1);
 }
 
-//convertir esto en split y funcionar desde ahí
 int	ft_valid_map(char **map, int x, int y, int flag)
 {
 	while (map[x])
 	{
 		while (map[x][y])
 		{
-			if (map[x][y] == 'N' || map[x][y] == 'S'
-				|| map[x][y] == 'E' || map[x][y] == 'W')
+			if (ft_compare_char(map[x][y], "NSEW") == 1)
 			{
 				flag++;
 				y++;
 			}
-			else if (map[x][y] == '1' || map[x][y] == '0'
-				|| map[x][y] == ' ' || map[x][y] == '\n')
+			else if (ft_compare_char(map[x][y], "1 \n") == 1)
 				y++;
+			else if (map[x][y] == '0')
+			{
+				if (ft_closed_map(map, x, y) == -1)
+					return (ft_comprobated_flag(-42));
+				y++;
+			}
 			else
-				return (ft_comprobated_flag(37));
+				return (ft_comprobated_flag(-37));
 		}
 		y = 0;
 		x++;

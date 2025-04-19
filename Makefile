@@ -18,8 +18,11 @@ CFLAG = -Wall -Wextra -Werror -g3 -fsanitize=address
 SOURCES = main.c \
 			error.c \
 			ft_valid_file.c \
+			obtain_data.c \
 			ft_created_map.c \
 			ft_valid_map.c \
+			ft_closed_map.c \
+			ft_compare_char.c \
 			ft_print_error.c \
 			get_next_line.c \
 			ft_free.c \
