@@ -24,9 +24,9 @@
 int		ft_argument_error(int argc, char **argv);
 int		ft_good_map(char *maps_name);
 int		ft_valid_file(char *argv);
-char	*ft_created_map(char *argv);
+char	**ft_created_map(char *argv, char *aux);
 void	ft_print_error(char *text);
-int		ft_valid_map(char *map, int x, int flag);
+int		ft_valid_map(char **map, int x, int y, int flag);
 
 char	*get_next_line(int fd);
 char	*ft_clean_line(char **rest, char **buffer);

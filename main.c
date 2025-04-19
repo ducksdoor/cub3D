@@ -14,16 +14,23 @@
 
 int	main(int argc, char **argv)
 {
-	char	*map;
+	char	**map;
+	int		x;
 
+	x = 0;
 	if (ft_argument_error(argc, argv) == -1)
 		exit (-1);
 	if (ft_valid_file(argv[1]) == -1)
 		exit (-1);
-	map = ft_created_map(argv[1]);
-	if (ft_valid_map(map, 0, 0) == -1)
+	map = ft_created_map(argv[1], NULL);
+	if (ft_valid_map(map, 0, 0, 0) == -1)
 		exit (-1);
 	printf(" the file is --> %s\n", argv[1]);
-	printf(" the map is \n%s \n", map);
-	free(map);
+	printf(" the map is \n");
+	while (map[x])
+	{
+		printf("%s\n", map[x]);
+		x++;
+	}
+	ft_free(map);
 }

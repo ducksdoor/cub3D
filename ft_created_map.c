@@ -12,14 +12,13 @@
 
 #include "cub3.h"
 
-char	*ft_created_map(char *argv)
+char	**ft_created_map(char *argv, char *aux)
 {
 	char	*line;
 	int		fd;
-	char	*aux;
 	char	*tmp;
+	char	**real_map;
 
-	aux = NULL;
 	fd = open(argv, O_RDONLY);
 	if (fd < 0)
 		return (NULL);
@@ -37,5 +36,7 @@ char	*ft_created_map(char *argv)
 		line = get_next_line(fd);
 	}
 	close(fd);
-	return (aux);
+	real_map = ft_split(aux, '\n');
+	free(aux);
+	return (real_map);
 }
