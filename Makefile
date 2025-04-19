@@ -19,6 +19,8 @@ SOURCES = main.c \
 			error.c \
 			ft_valid_file.c \
 			obtain_data.c \
+			ft_init_t_map.c \
+			ft_clean_t_map.c \
 			ft_created_map.c \
 			ft_valid_map.c \
 			ft_closed_map.c \
@@ -27,6 +29,8 @@ SOURCES = main.c \
 			get_next_line.c \
 			ft_free.c \
 			ft_clean_line.c \
+			ft_charisdigit.c \
+			ft_atoi.c \
 			ft_calloc.c \
 			ft_bzero.c \
 			ft_strchr.c \
@@ -36,6 +40,7 @@ SOURCES = main.c \
 			ft_substr.c \
 			ft_strdup.c \
 			ft_split.c \
+			ft_strtrim.c \
 
 OBJECT = $(SOURCES:.c=.o)
 

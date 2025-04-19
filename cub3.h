@@ -29,11 +29,13 @@ typedef struct s_map
     char	*ea;
     char	*f;
     char	*c;
+    int     segurity;
 }				t_map;
 
 int		ft_argument_error(int argc, char **argv);
 t_map	*obtain_data(char *argv);
 t_map	*ft_init_t_map(void);
+void	*ft_clean_t_map(t_map *data);
 int		ft_good_map(char *maps_name);
 int		ft_valid_file(char *argv);
 char	**ft_created_map(char *argv, char *aux);
@@ -41,10 +43,10 @@ int		ft_closed_map(char **map, int x, int y);
 int		ft_compare_char(char object, char *try);
 void	ft_print_error(char *text);
 int		ft_valid_map(char **map, int x, int y, int flag);
-
 char	*get_next_line(int fd);
 char	*ft_clean_line(char **rest, char **buffer);
-
+int		ft_atoi(const char *str);
+int		ft_charisdigit(char *nmb);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_bzero(void *s, unsigned int n);
 size_t	ft_strlen(const char *s);
@@ -53,7 +55,7 @@ int		ft_strchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *src);
-
+char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 void	ft_free(char **lst);
 

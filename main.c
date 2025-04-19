@@ -24,6 +24,11 @@ int	main(int argc, char **argv)
 	if (ft_valid_file(argv[1]) == -1)
 		exit (-1);
 	data = obtain_data(argv[1]);
+	if (data->segurity == -1)
+	{
+		ft_clean_t_map(data);
+		exit (-1);
+	}
 	map = ft_created_map(argv[1], NULL);
 	if (ft_valid_map(map, 0, 0, 0) == -1)
 		exit (-1);
@@ -31,7 +36,7 @@ int	main(int argc, char **argv)
 	printf(" the map is \n");
 	while (map[x])
 	{
-		printf("%s\n", map[x]);
+		printf("\n%s\n", map[x]);
 		x++;
 	}
 	ft_free(map);
