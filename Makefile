@@ -20,6 +20,7 @@ SOURCES = main.c \
 			ft_valid_file.c \
 			obtain_data.c \
 			ft_init_t_map.c \
+			ft_confirm_data.c \
 			ft_clean_t_map.c \
 			ft_created_map.c \
 			ft_valid_map.c \

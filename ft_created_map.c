@@ -12,6 +12,27 @@
 
 #include "cub3.h"
 
+static char	*search_map(int fd)
+{
+	char	*line;
+	char	*tmp;
+
+	line = get_next_line(fd);
+	while (line != NULL)
+	{
+		tmp = ft_strtrim(line, " 	");
+		if (ft_strncmp(tmp, "1", 1) == 0)
+		{
+			free(tmp);
+			break ;
+		}
+		free(line);
+		line = get_next_line(fd);
+		free(tmp);
+	}
+	return (line);
+}
+
 char	**ft_created_map(char *argv, char *aux)
 {
 	char	*line;
@@ -22,7 +43,7 @@ char	**ft_created_map(char *argv, char *aux)
 	fd = open(argv, O_RDONLY);
 	if (fd < 0)
 		return (NULL);
-	line = get_next_line(fd);
+	line = search_map(fd);
 	while (line != NULL)
 	{
 		if (aux == NULL)

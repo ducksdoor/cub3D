@@ -16,13 +16,20 @@ int	ft_charisdigit(char *nmb)
 {
 	int	x;
 
-    x = 0;
+	x = 0;
+	if (nmb == NULL || nmb[0] == '\0')
+	{
+		ft_print_error(" Problems with colors numbers");
+		return (-1);
+	}
 	while (nmb[x])
 	{
-        if (nmb[x] <'0' || nmb[x] > '9')
-            return (-1);
-	    else
-		    x++;
+		if (nmb[x] < '0' || nmb[x] > '9')
+		{
+			printf("doy fallo en -> %c\n", nmb[x]);
+			return (-1);
+		}
+		x++;
 	}
 	return (0);
 }

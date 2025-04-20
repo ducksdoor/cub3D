@@ -12,16 +12,16 @@
 
 #include "cub3.h"
 
-int ft_compare_char(char object, char *try)
+int	ft_compare_char(char object, char *try)
 {
-	int x;
+	int	x;
 
 	x = 0;
-	while(try[x])
+	while (try[x])
 	{
 		if (object == try[x])
 			return (1);
 		x++;
 	}
-	return(-1);
+	return (-1);
 }

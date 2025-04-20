@@ -12,9 +12,9 @@
 
 #include "cub3.h"
 
-int ft_closed_map(char **map, int x, int y)
+int	ft_closed_map(char **map, int x, int y)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	while (map[size])

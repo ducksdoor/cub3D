@@ -35,6 +35,7 @@ typedef struct s_map
 int		ft_argument_error(int argc, char **argv);
 t_map	*obtain_data(char *argv);
 t_map	*ft_init_t_map(void);
+void	ft_confirm_data(t_map *data);
 void	*ft_clean_t_map(t_map *data);
 int		ft_good_map(char *maps_name);
 int		ft_valid_file(char *argv);
